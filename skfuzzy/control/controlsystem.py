@@ -603,7 +603,7 @@ class CrispValueCalculator(object):
 
             try:
                 return defuzz(ups_universe, output_mf,
-                              'som')
+                              mode='som')
             except DefuzzEmptyMembershipError:
                 raise EmptyMembershipError(self.var)
         else:
