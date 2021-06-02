@@ -342,6 +342,7 @@ class ControlSystemSimulation(object):
         Compute the fuzzy system.
         """
         self.input._update_to_current()
+        print('test library changes')
 
         # Must clear downstream calculations for repeated runs
         if self._array_inputs:
