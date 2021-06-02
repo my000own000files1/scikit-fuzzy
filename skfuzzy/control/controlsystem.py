@@ -595,9 +595,10 @@ class CrispValueCalculator(object):
 
     def defuzz(self):
         """Derive crisp value based on membership of term(s)."""
+        print('test library changes')
         if not self.sim._array_inputs:
             ups_universe, output_mf, term_mfs = self.find_memberships()
-
+        
             if len(term_mfs) == 0:
                 raise NoTermMembershipsError(self.var)
 
@@ -616,7 +617,7 @@ class CrispValueCalculator(object):
 
             for out in it:
                 universe, mf = self.find_memberships_nd(it.multi_index)
-                out[...] = defuzz(universe, mf, self.var.defuzzify_method)
+                out[...] = defuzz(universe, mf, mode='som')
 
             return output
 
