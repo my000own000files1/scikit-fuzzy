@@ -604,7 +604,7 @@ class CrispValueCalculator(object):
 
             try:
                 return defuzz(ups_universe, output_mf,
-                              mode='som')
+                              mode='mom')
             except DefuzzEmptyMembershipError:
                 raise EmptyMembershipError(self.var)
         else:
@@ -617,7 +617,7 @@ class CrispValueCalculator(object):
 
             for out in it:
                 universe, mf = self.find_memberships_nd(it.multi_index)
-                out[...] = defuzz(universe, mf, mode='som')
+                out[...] = defuzz(universe, mf, mode='mom')
 
             return output
 
